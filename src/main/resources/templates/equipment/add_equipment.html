@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <form action="/equipment/add" method="post">
+            Добавление комплектации автомобиля
+            <div>
+                Бортовой компьютер
+                <select name="onBoardComputer">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+            </div>            <div>
+                Электро стеклоподъемники
+                <select name="electricWindows">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+            </div>
+            <div>
+                Панорамная крыша
+                <select name="panoramicRoof">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+            </div>
+            <div>
+                Двузонный климат контроль
+                <select name="dualZoneClimate">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+            </div>
+            <div>Цвет кузова<input placeholder="Каков цвет кузова" type="text" name="bodyColor"></div>
+            <div>
+                Материал салона
+                <select name="interiorTrim">
+                    <option>Кожа</option>
+                    <option>Кожа + альконтара</option>
+                    <option>Кожа + дерево</option>
+                    <option>ткань</option>
+                </select>
+            </div>
+            <div>Цвет салона<input placeholder="Каков цвет салона" type="text" name="interiorColor"></div>
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

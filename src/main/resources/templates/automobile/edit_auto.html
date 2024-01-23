@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <form th:each="auto : ${automobile}" th:action="@{'/auto/'+ ${auto.getId()}}" method="post"style="margin: 10px 0">
+            Редактирование автомобиля
+            <div>Год выпуска<input th:value="${auto.getIssueYear()}" type="text" name="issueYear"></div>
+            <div>Мощность <input th:value="${auto.getPower()}" type="number" name="power"></div>
+            <div>Объем двигателя<input th:value="${auto.getEngineCapacity()}" type="text" name="engineCapacity"></div>
+            <div>Вин номер<input th:value="${auto.getWin()}" type="text" name="win"></div>
+            <div>
+                Model
+                <select name="automobileModel" >
+                    <option th:each="autoModel : ${automobileModels}"
+                            th:text="${autoModel.getName()} + ' ' + ${autoModel.getAutomobileMark().getName()}"
+                            th:value="${autoModel.getId()}"
+                            th:selected="${autoModel.getId() == auto.getAutomobileModel().getId()}"></option>
+                </select>
+                <!--<input placeholder="Введите id марки" type="number" name="automobileMark">-->
+            </div>
+            <div>
+                Equipment
+                <select name="equipment">
+                    <option th:each="equipment : ${equipments}"
+                            th:text="${equipment.getId()}"
+                            th:value="${equipment.getId()}"
+                            th:selected="${equipment.getId() == auto.getEquipment().getId()}"></option>
+                </select>
+            </div>
+            <button type="submit">Изменить</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <form th:each="sale: ${sale}" th:action="@{'/sale/'+ ${sale.getId()}}" method="post"style="margin: 10px 0">
+            Редактирование продажи
+            <div>Покупатель
+                <select name="client" required>
+                    <option th:each="client : ${clients}"
+                            th:text="${client.getFullName()}"
+                            th:value="${client.getId()}"
+                            th:selected="${client.getId() == sale.getClient().getId()}"></option>
+                    </option>
+                </select>
+            </div>
+            <div>
+                Продавец
+                <select name="seller" required>
+                    <option th:each="seller : ${sellers}"
+                            th:text="${seller.getFullName()}"
+                            th:value="${seller.getId()}"
+                            th:selected="${seller.getId() == sale.getSeller().getId()}">
+                    </option>
+                </select>
+            </div>
+            <div>
+                Автомобиль
+                <select name="automobile" required>
+                    <option th:each="auto : ${allAutomobiles}"
+                            th:text="${auto.getAutomobileModel().getAutomobileMark().getName()} + '  ' + ${auto.getAutomobileModel().getName()}"
+                            th:value="${auto.getId()}"
+                            th:selected="${auto.getId() == sale.getAutomobile().getId()}">
+                    </option>
+                </select>
+            </div>
+            <div>Сумма сделки<input th:value="${sale.getSum()}" type="number" name="sum" required></div>
+            <div>Дата сделки<input th:value="${sale.getDate()}" type="date" name="date" required></div>
+            <div>
+                Доставка
+                <select name="deliveryType" required>
+                    <option th:each="delType : ${deliveryTypes}"
+                            th:text="${delType.getName()}"
+                            th:value="${delType.getId()}"
+                            th:selected="${delType.getId() == sale.getDeliveryType().getId()}"></option>
+                </select>
+
+            </div>
+            <div>
+                Оплата
+                <select name="payType" required>
+                    <option th:each="payType : ${payTypes}"
+                            th:text="${payType.getName()}"
+                            th:value="${payType.getId()}"
+                            th:selected="${payType.getId() == sale.getPayType().getId()}">
+                    </option>
+                </select>
+            </div>
+            <button type="submit">Изменить</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

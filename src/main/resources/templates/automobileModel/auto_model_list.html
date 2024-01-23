@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Марки авто</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="left__nav">
+        <div><a href="/auto">Автомобили</a></div>
+        <div><a href="/auto_model">Модели автомобилей</a></div>
+        <div><a href="/auto_mark">Марки автомобилей</a></div>
+        <div><a href="/equipment">Комплектации автомобилей</a></div>
+        <div><a href="/client">Клиенты</a></div>
+        <div><a href="/seller">Продавцы</a></div>
+        <div><a href="/pay_type">Способы оплаты</a></div>
+        <div><a href="/delivery_type">Способы доставки</a></div>
+        <div><a href="/sale">Продажа/покупка</a></div>
+    </div>
+    <div class="table">
+        <div class="display__flex" style=" margin-bottom: 20px">
+            <button><a href="/auto_model/add">Добавить Модель автомобиля</a></button>
+        </div>
+        <table>
+            <thead >
+            <tr >
+                <th >id Модели авто</th>
+                <th>Марка Авто</th>
+                <th>Название</th>
+                <th>Действие</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="autoModel : ${automobileModels}" >
+                <td th:text="${autoModel.getId()}"></td>
+                <td th:text="${autoModel.getAutomobileMark().getName()}"></td>
+                <td th:text="${autoModel.getName()}"></td>
+
+                <td class="display__flex">
+                    <button><a th:href="@{'/auto_model/' + ${autoModel.getId()}}">Изменить</a></button>
+                    <form th:action="@{'/auto_model/delete/'+ ${autoModel.getId()}}" method="post">
+                        <button id="delete" type="submit">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+</body>
+</html>

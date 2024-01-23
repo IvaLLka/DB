@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="left__nav">
+        <div><a href="/auto">Автомобили</a></div>
+        <div><a href="/auto_model">Модели автомобилей</a></div>
+        <div><a href="/auto_mark">Марки автомобилей</a></div>
+        <div><a href="/equipment">Комплектации автомобилей</a></div>
+        <div><a href="/client">Клиенты</a></div>
+        <div><a href="/seller">Продавцы</a></div>
+        <div><a href="/pay_type">Способы оплаты</a></div>
+        <div><a href="/delivery_type">Способы доставки</a></div>
+        <div><a href="/sale">Продажа/покупка</a></div>
+    </div>
+
+    <div class="table">
+        <table >
+            <thead >
+            <tr>
+                <th>Название модели</th>
+                <th>Название марки</th>
+                <th>Год выпуска</th>
+                <th>Дата продажи</th>
+                <th>Цвет кузова</th>
+                <th>Двузонный климат контроль</th>
+                <th>Электро стекло подъемники</th>
+                <th>Цвет салона</th>
+                <th>Материал салона</th>
+                <th>Бортовой компьютер</th>
+                <th>Панорамная крыша</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="autoModel : ${automobileModels}">
+                <td th:text="${autoModel[0] == true ? 'да' : (autoModel[0] == false ? 'нет' : autoModel[0])}"></td>
+                <td th:text="${autoModel[1] == true ? 'да' : (autoModel[1] == false ? 'нет' : autoModel[1])}"></td>
+                <td th:text="${autoModel[2] == true ? 'да' : (autoModel[2] == false ? 'нет' : autoModel[2])}"></td>
+                <td th:text="${autoModel[3] == true ? 'да' : (autoModel[3] == false ? 'нет' : autoModel[3])}"></td>
+                <td th:text="${autoModel[4] == true ? 'да' : (autoModel[4] == false ? 'нет' : autoModel[4])}"></td>
+                <td th:text="${autoModel[5] == true ? 'да' : (autoModel[5] == false ? 'нет' : autoModel[5])}"></td>
+                <td th:text="${autoModel[6] == true ? 'да' : (autoModel[6] == false ? 'нет' : autoModel[6])}"></td>
+                <td th:text="${autoModel[7] == true ? 'да' : (autoModel[7] == false ? 'нет' : autoModel[7])}"></td>
+                <td th:text="${autoModel[8] == true ? 'да' : (autoModel[8] == false ? 'нет' : autoModel[8])}"></td>
+                <td th:text="${autoModel[9] == true ? 'да' : (autoModel[9] == false ? 'нет' : autoModel[9])}"></td>
+                <td th:text="${autoModel[10] == true ? 'да' : (autoModel[10] == false ? 'нет' : autoModel[10])}"></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

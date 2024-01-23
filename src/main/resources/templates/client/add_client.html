@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <form action="/client/add" method="post">
+            Добавление клиента
+            <div>ФИО<input placeholder="Введите ФИО" type="text" name="fullName"></div>
+            <div>Дата рождения<input placeholder="Введите Дату рождения" type="date" name="dob"></div>
+            <div>
+                Номер телефона
+                <input placeholder="Введите Номер телефона" name="phoneNumber" type="tel" list="defaultTels">
+                <datalist id="defaultTels">
+                    <option value="89250300834"></option>
+                </datalist>
+            </div>
+            <div>Дата регистрации<input placeholder="Введите дату регистрации" type="date" name="registrationDate"></div>
+            <div>Адрес<input placeholder="Введите Адрес" type="text" name="adress"></div>
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

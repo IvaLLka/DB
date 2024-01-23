@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <form th:each="client : ${client}" th:action="@{'/client/'+ ${client.getId()}}" method="post">
+            Редактирование продавца
+            <div>ФИО<input th:value="${client.getFullName()}" type="text" name="fullName"></div>
+            <div>Номер телефона<input th:value="${client.getPhoneNumber()}" type="tel" name="phoneNumber"></div>
+            <div>Адрес<input th:value="${client.getAdress()}" type="text" name="adress"></div>
+            <div>Дата рождения<input th:value="${client.getDob()}" type="date" name="dob"></div>
+            <div>Дата регистрации<input th:value="${client.getRegistrationDate()}" type="date" name="registrationDate"></div>
+            <button type="submit">Изменить</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

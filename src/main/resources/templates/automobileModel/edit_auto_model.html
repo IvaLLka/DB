@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="from">
+
+        <form th:object="${automobileModel}" th:action="@{'/auto_model/'+ ${automobileModel.getId()}}" method="post">
+            Редактирование мoдели автомобиля
+            <div><input th:value="${automobileModel.name}" type="text" th:field="*{name}" name="name"></div>
+            Automobile Model
+            <select name="automobileMark">
+                <option th:each="autoMark : ${automobileMarks}"
+                        th:text="${autoMark.getName()}"
+                        th:value="${autoMark.getId()}"></option>
+                </option>
+            </select>
+            <button type="submit">Изменить</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

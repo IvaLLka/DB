@@ -1,0 +1,161 @@
+html, body {
+    padding: 0;
+    margin:0;
+    background-color: #1a1a1a; /* Темный цвет фона */
+
+    color: #fff; /* Белый цвет текста */
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.left__nav{
+    border-radius: 10px;
+    padding: 15px 10px;
+    width: 15%;
+    background-color: #1a1a1a;
+    border: 1px solid #4a90e2;
+}
+
+.table{
+    width: 70%;
+
+}
+
+
+table {
+
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+
+    border: 1px solid #4a90e2; /* Голубая окантовка */
+    padding: 10px;
+    text-align: center;
+
+}
+
+th {
+    background-color: #4a90e2; /* Голубой цвет фона для заголовков */
+    color: #fff; /* Белый цвет текста для заголовков */
+}
+
+td {
+    background-color: #333; /* Темный цвет фона для ячеек данных */
+}
+td.display__flex {
+    height: max-content;
+    background-color: #333; /* Темный цвет фона для ячеек данных */
+}
+
+td a {
+    color: #4a90e2; /* Голубой цвет для ссылок в ячейках */
+}
+
+#delete {
+    /*margin-left: 20px;*/
+    background-color: #ff6347; /* Красный цвет для кнопок удаления */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#delete:hover {
+    background-color: #cc0000; /* Темно-красный при наведении */
+}
+
+div {
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #4a90e2; /* Голубой цвет для ссылок */
+}
+
+button a {
+    color: #fff; /* Белый цвет для текста внутри кнопок */
+}
+
+button {
+    margin-top: 10px;
+    background-color: #4a90e2; /* Голубой цвет для кнопок */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #007acc; /* Темно-голубой при наведении */
+}
+
+.form{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #4a90e2;
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+
+form{
+    margin: 0 5px;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Стили для кнопки в форме */
+form button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Изменение стиля кнопки при наведении */
+form button:hover {
+    background-color: #007acc;
+}
+
+/* Стили для ссылок в форме (если есть) */
+form a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+/* Изменение стиля ссылок в форме при наведении */
+form a:hover {
+    text-decoration: underline;
+}
+.display__flex{
+    display: flex;
+    justify-content: space-evenly;
+}

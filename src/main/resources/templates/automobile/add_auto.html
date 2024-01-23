@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form">
+
+        <form action="/auto/add" method="post">
+            Добавление автомобиля
+            <div>Год выпуска<input placeholder="Введите год выпуска" type="text" name="issueYear"></div>
+            <div>Мощность<input placeholder="Введите мощность" type="number" name="power"></div>
+            <div>Объем двигателя<input placeholder="Введите объем двигателя" type="text" name="engineCapacity"></div>
+            <div>Вин номер<input placeholder="Введите win номер двигателя" type="text" name="win"></div>
+
+            <div>
+                Model
+                <select name="automobileModel">
+                    <option th:each="autoModel : ${automobileModels}"
+                            th:text="${autoModel.getAutomobileMark().getName()} + ' ' + ${autoModel.getName()}"
+                            th:value="${autoModel.getId()}"></option>
+                </select>
+
+            </div>
+            <div>
+                Equipment
+                <select name="equipment" >
+                    <option th:each="equipment : ${equipments}"
+                            th:text="${equipment.getId()}"
+                            th:value="${equipment.getId()}"></option>
+                </select>
+            </div>
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

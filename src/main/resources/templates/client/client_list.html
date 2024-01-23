@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="left__nav">
+        <div><a href="/auto">Автомобили</a></div>
+        <div><a href="/auto_model">Модели автомобилей</a></div>
+        <div><a href="/auto_mark">Марки автомобилей</a></div>
+        <div><a href="/equipment">Комплектации автомобилей</a></div>
+        <div><a href="/client">Клиенты</a></div>
+        <div><a href="/seller">Продавцы</a></div>
+        <div><a href="/pay_type">Способы оплаты</a></div>
+        <div><a href="/delivery_type">Способы доставки</a></div>
+        <div><a href="/sale">Продажа/покупка</a></div>
+    </div>
+    <div class="table">
+        <div class="display__flex" style=" margin-bottom: 20px">
+            <button><a href="/client/add">Добавить клиента</a></button>
+        </div>
+        <table >
+            <thead >
+            <tr >
+                <th >id Клиента</th>
+                <th>Имя</th>
+                <th>Номер телефона</th>
+                <th>Адрес</th>
+                <th>Дата рождения</th>
+                <th>Дата регистрации</th>
+                <th>Действия</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr th:each="client : ${clients}">
+                <td th:text="${client.getId()}"></td>
+                <td th:text="${client.getFullName()}"></td>
+                <td th:text="${client.getPhoneNumber()}"></td>
+                <td th:text="${client.getAdress()}"></td>
+                <td th:text="${client.getDob()}"></td>
+                <td th:text="${client.getRegistrationDate()}"></td>
+                <td class="display__flex">
+                    <button><a th:href="@{'/client/' + ${client.getId()}}">Изменить</a></button>
+                    <form th:action="@{'/client/delete/'+ ${client.getId()}}" method="post">
+                        <button id="delete" type="submit">Удалить</button>
+                    </form>
+                    <button><a th:href="@{'/client/sql/' + ${client.getId()}}">Личная карточка</a></button>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+</body>
+</html>

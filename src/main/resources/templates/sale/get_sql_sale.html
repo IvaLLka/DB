@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="left__nav">
+        <div><a href="/auto">Автомобили</a></div>
+        <div><a href="/auto_model">Модели автомобилей</a></div>
+        <div><a href="/auto_mark">Марки автомобилей</a></div>
+        <div><a href="/equipment">Комплектации автомобилей</a></div>
+        <div><a href="/client">Клиенты</a></div>
+        <div><a href="/seller">Продавцы</a></div>
+        <div><a href="/pay_type">Способы оплаты</a></div>
+        <div><a href="/delivery_type">Способы доставки</a></div>
+        <div><a href="/sale">Продажа/покупка</a></div>
+    </div>
+    <div class="table">
+        <table >
+            <thead>
+                <tr>
+                    <th >id</th>
+                    <th>Имя продавца</th>
+                    <th>Общая прибыль</th>
+                    <th>Имя покупателя</th>
+                    <th>Стоимость авто</th>
+                    <th>Марка авто</th>
+                    <th>Модель авто</th>
+                    <th>Дата сделки</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:each="saler :${sellers}">
+                <td th:text="${saler[0]}"></td>
+                <td th:text="${saler[1]}"></td>
+
+                <td th:text="${saler[2]}"></td>
+                <td th:text="${saler[7]}"></td>
+
+                <td th:text="${saler[3]}"></td>
+                <td th:text="${saler[5]}"></td>
+                <td th:text="${saler[4]}"></td>
+                <td th:text="${saler[6]}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

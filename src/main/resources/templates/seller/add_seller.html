@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form">
+
+        <form action="/seller/add" method="post">
+            Добавление покупателя
+            <div>ФИО<input placeholder="Введите ФИО" type="text" name="fullName"></div>
+            <div>Email<input placeholder="Введите Email" type="email" name="email"></div>
+            <div>
+                Номер телефона
+                <input placeholder="Введите Номер телефона" name="phoneNumber" type="tel" list="defaultTels">
+                <datalist id="defaultTels">
+                    <option value="89250300834"></option>
+                </datalist>
+            </div>
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <form th:object="${equipment}" th:action="@{'/equipment/'+ ${equipment.getId()}}" method="post">
+            Редактирование комплектации автомобиля
+            <div>Цвет кузова<input th:value="${equipment.bodyColor}" type="text" name="bodyColor"></div>
+            <div>Панорамная крыша<input th:value="${equipment.panoramicRoof}" type="text" name="panoramicRoof"></div>
+            <div>Бортовой компьютер<input th:value="${equipment.onBoardComputer}" type="text" name="onBoardComputer"></div>
+            <div>Материал малона<input th:value="${equipment.interiorTrim}" type="text" name="interiorTrim"></div>
+            <div>Цвет салона<input th:value="${equipment.interiorColor}" type="text" name="interiorColor"></div>
+            <div>Электрические стеклоподъемники<input th:value="${equipment.electricWindows}" type="text" name="electricWindows"></div>
+            <div>Двузонный климат контроль<input th:value="${equipment.dualZoneClimate}" type="text" name="dualZoneClimate"></div>
+            <button type="submit">Изменить</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
